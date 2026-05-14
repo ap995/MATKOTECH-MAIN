@@ -589,7 +589,7 @@ img {
 .cap-ai::after {
   background-image:
     linear-gradient(180deg, rgba(0, 0, 0, 0.04), rgba(0, 0, 0, 0.52)),
-    url("New folder/AI Solutions.png");
+    url("images/AI Solutions.png");
 }
 
 .capability-industrial::after {
@@ -1908,7 +1908,7 @@ img {
 .theme-industrialmono::after {
   background:
     linear-gradient(180deg, rgba(0, 0, 0, 0.08), rgba(0, 0, 0, 0.22)),
-    url('New folder/CMF Design.jpg') center / cover no-repeat;
+    url('images/CMF Design.jpg') center / cover no-repeat;
 }
 
 .theme-cutting::after {
