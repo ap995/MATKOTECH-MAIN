@@ -1,0 +1,447 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Matkotech | About Us</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Playfair+Display:ital,wght@0,400;0,600;1,400&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+  <style>
+    :root {
+      --bg-color: #f4f5f8;
+      --text-primary: #1c1d21;
+      --text-secondary: #636671;
+      --primary: #16a34a;
+      --font-serif: 'Playfair Display', serif;
+      --font-sans: 'Inter', sans-serif;
+    }
+
+    .about-page { padding: 0 0 0; background: var(--bg-color); font-family: var(--font-sans); }
+
+    /* --- Hero Banner --- */
+    .about-hero {
+      position: relative;
+      min-height: 380px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      background: linear-gradient(135deg, #0f172a 0%, #1e293b 50%, #0f172a 100%);
+      overflow: hidden;
+      padding: 100px 20px 60px;
+    }
+    .about-hero::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: radial-gradient(ellipse at 30% 50%, rgba(22,163,74,.15) 0%, transparent 60%),
+                  radial-gradient(ellipse at 70% 30%, rgba(22,163,74,.1) 0%, transparent 50%);
+    }
+    .about-hero-content { position: relative; z-index: 2; max-width: 800px; }
+    .about-hero-kicker {
+      display: inline-block;
+      padding: .5rem 1.2rem;
+      border-radius: 999px;
+      background: rgba(22,163,74,.15);
+      color: var(--primary);
+      font-size: .8rem;
+      font-weight: 700;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      margin-bottom: 1.2rem;
+    }
+    .about-hero h1 {
+      font-family: var(--font-serif);
+      font-size: clamp(2.8rem, 5vw, 4rem);
+      font-weight: 400;
+      color: #fff;
+      line-height: 1.15;
+      margin-bottom: 1rem;
+    }
+    .about-hero h1 span { color: var(--primary); }
+    .about-hero p {
+      color: rgba(255,255,255,.7);
+      font-size: 1.1rem;
+      line-height: 1.7;
+      max-width: 600px;
+      margin: 0 auto;
+    }
+
+    /* --- Floating grid lines decoration --- */
+    .hero-grid-lines {
+      position: absolute;
+      inset: 0;
+      background-image:
+        linear-gradient(rgba(255,255,255,.03) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(255,255,255,.03) 1px, transparent 1px);
+      background-size: 60px 60px;
+    }
+
+    /* --- Section Shell --- */
+    .about-shell { width: min(1200px, calc(100vw - 40px)); margin: 0 auto; }
+
+    /* --- Company Feature Section --- */
+    .about-feature-section { padding: 5rem 20px; }
+    .about-feature-grid {
+      display: grid;
+      grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+      gap: 3rem;
+      align-items: center;
+    }
+    .about-feature-img {
+      position: relative;
+      border-radius: 20px;
+      overflow: hidden;
+      min-height: 420px;
+      box-shadow: 0 24px 60px rgba(15,23,42,.12);
+    }
+    .about-feature-img img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      position: absolute;
+      inset: 0;
+    }
+    .about-director-badge {
+      position: absolute;
+      left: 1.2rem;
+      bottom: 1.2rem;
+      right: 1.2rem;
+      padding: 1rem 1.4rem;
+      border-radius: 14px;
+      background: rgba(255,255,255,.95);
+      backdrop-filter: blur(12px);
+      border: 1px solid rgba(255,255,255,.8);
+      box-shadow: 0 8px 24px rgba(0,0,0,.1);
+    }
+    .about-director-badge .badge-label {
+      display: block;
+      color: var(--primary);
+      font-size: .7rem;
+      font-weight: 800;
+      text-transform: uppercase;
+      letter-spacing: 1.5px;
+      margin-bottom: .25rem;
+    }
+    .about-director-badge .badge-name {
+      font-size: 1.15rem;
+      font-weight: 600;
+      color: #1a202c;
+    }
+    .about-feature-text h2 {
+      font-family: var(--font-serif);
+      font-size: clamp(2rem, 3vw, 2.8rem);
+      font-weight: 400;
+      color: #1a202c;
+      line-height: 1.2;
+      margin-bottom: 1.2rem;
+    }
+    .about-feature-text h2 span { color: var(--primary); }
+    .about-feature-text p {
+      color: #64748b;
+      font-size: 1.02rem;
+      line-height: 1.8;
+      margin-bottom: 1rem;
+    }
+    .about-feature-text .green-line {
+      width: 60px;
+      height: 3px;
+      background: var(--primary);
+      border-radius: 3px;
+      margin-bottom: 1.5rem;
+    }
+
+    /* --- Pillars Section --- */
+    .about-pillars-section { padding: 0 20px 5rem; }
+    .about-pillars-grid {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 1.5rem;
+    }
+    .about-pillar-card {
+      padding: 2rem;
+      border-radius: 18px;
+      background: #fff;
+      border: 1px solid rgba(15,23,42,.06);
+      box-shadow: 0 8px 30px rgba(15,23,42,.05);
+      transition: transform .3s ease, box-shadow .3s ease;
+    }
+    .about-pillar-card:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 16px 48px rgba(15,23,42,.1);
+    }
+    .about-pillar-icon {
+      width: 48px;
+      height: 48px;
+      border-radius: 12px;
+      background: rgba(22,163,74,.1);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin-bottom: 1rem;
+      color: var(--primary);
+    }
+    .about-pillar-card h3 {
+      font-family: var(--font-sans);
+      font-size: 1.1rem;
+      font-weight: 600;
+      color: #1a202c;
+      margin-bottom: .5rem;
+    }
+    .about-pillar-card p {
+      margin: 0;
+      color: #64748b;
+      font-size: .92rem;
+      line-height: 1.65;
+    }
+
+    /* --- Mission / Vision --- */
+    .about-mv-section {
+      padding: 4rem 20px 5rem;
+      background: transparent;
+    }
+    .about-mv-header { display: none; }
+    .about-mv-header h2 {
+      font-family: var(--font-serif);
+      font-size: 3rem;
+      font-weight: 400;
+      color: #fff;
+      margin-bottom: .5rem;
+    }
+    .about-mv-header h2 span { color: var(--primary); }
+    .about-mv-header p { color: rgba(255,255,255,.6); font-size: 1.05rem; }
+    .about-mv-grid {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 2rem;
+    }
+    .about-mv-card {
+      padding: 2.5rem;
+      border-radius: 20px;
+      background: #ffffff;
+      border: 1px solid rgba(15,23,42,.08);
+      box-shadow: 0 18px 52px rgba(15,23,42,.06);
+      backdrop-filter: none;
+      transition: transform .3s ease, box-shadow .3s ease;
+    }
+    .about-mv-card:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 22px 62px rgba(15,23,42,.1);
+    }
+    .about-mv-card .mv-icon {
+      width: 52px;
+      height: 52px;
+      border-radius: 14px;
+      background: rgba(22,163,74,.15);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin-bottom: 1.2rem;
+      color: var(--primary);
+    }
+    .about-mv-card h3 {
+      font-family: var(--font-serif);
+      font-size: 1.8rem;
+      font-weight: 400;
+      color: #1a202c;
+      margin-bottom: .75rem;
+    }
+    .about-mv-card p {
+      margin: 0;
+      color: #64748b;
+      line-height: 1.8;
+      font-size: 1rem;
+    }
+
+    /* --- Stats Section --- */
+    .about-stats-section { padding: 4rem 20px; }
+    .about-stats-grid {
+      display: grid;
+      grid-template-columns: repeat(4, minmax(0, 1fr));
+      gap: 1.5rem;
+    }
+    .about-stat-card {
+      text-align: center;
+      padding: 2rem 1rem;
+      border-radius: 18px;
+      background: #fff;
+      border: 1px solid rgba(15,23,42,.06);
+      box-shadow: 0 8px 30px rgba(15,23,42,.05);
+      transition: transform .3s ease;
+    }
+    .about-stat-card:hover { transform: translateY(-3px); }
+    .about-stat-number {
+      font-family: var(--font-serif);
+      font-size: 2.8rem;
+      font-weight: 600;
+      color: var(--primary);
+      line-height: 1;
+      margin-bottom: .4rem;
+    }
+    .about-stat-label {
+      color: #64748b;
+      font-size: .9rem;
+      font-weight: 500;
+    }
+
+    /* --- Responsive --- */
+    @media (max-width: 980px) {
+      .about-feature-grid { grid-template-columns: 1fr; }
+      .about-feature-img { min-height: 320px; }
+      .about-mv-grid { grid-template-columns: 1fr; }
+      .about-stats-grid { grid-template-columns: repeat(2, 1fr); }
+    }
+    @media (max-width: 640px) {
+      .about-hero { min-height: 300px; padding: 90px 16px 50px; }
+      .about-pillars-grid { grid-template-columns: 1fr; }
+      .about-stats-grid { grid-template-columns: 1fr; }
+      .about-mv-header h2 { font-size: 2.2rem; }
+    }
+  </style>
+</head>
+
+<body class="blank-page ai-standalone-page">
+  <header class="site-header plain-header page-shell">
+    <a class="brand" href="index.html" aria-label="Matkotech home">
+      <img src="matkotech-logo.png" alt="Matkotech logo">
+    </a>
+    <nav class="pill-nav" aria-label="Primary navigation">
+      <a href="index.html">Home</a>
+      <a class="active" href="about.html">About Us</a>
+      <div class="pill-dropdown">
+        <a href="products-services.html">Products &amp; Services ▾</a>
+        <div class="pill-dropdown-content">
+          <a href="electrical-design.html">Electrical Design</a>
+          <a href="mechanical-design.html">Mechanical Design</a>
+          <a href="firmware-design.html">Firmware Development</a>
+          <a href="app-development.html">Software Development</a>
+          <a href="industrial-design.html">Industrial Design</a>
+          <a href="supply-chain-management.html">Supply Chain Management</a>
+          <a href="program-management.html">Program Management</a>
+        </div>
+      </div>
+      <a href="contact.html">Contact Us</a>
+    </nav>
+  </header>
+
+  <!-- Hero Banner -->
+  <section class="about-hero">
+    <div class="hero-grid-lines"></div>
+    <div class="about-hero-content">
+      <div class="about-hero-kicker">About Matkotech</div>
+      <h1>Engineering Excellence, <span>Delivered</span></h1>
+      <p>Your trusted partner for innovative engineering and manufacturing solutions — from concept to mass production.</p>
+    </div>
+  </section>
+
+  <main class="about-page">
+
+    <!-- Company Feature -->
+    <section class="about-feature-section">
+      <div class="about-shell">
+        <div class="about-feature-grid">
+          <div class="about-feature-img">
+            <img src="New folder/About Us Engineering Meeting.png" alt="Matkotech engineering team meeting">
+            <div class="about-director-badge">
+              <span class="badge-label">Led By</span>
+              <span class="badge-name">Director Hardik Patel</span>
+            </div>
+          </div>
+          <div class="about-feature-text">
+            <div class="green-line"></div>
+            <h2>Engineering &amp; Manufacturing Solutions Built on <span>Trust</span></h2>
+            <p>Matkotech is your trusted partner for innovative engineering and manufacturing solutions, delivering quality-driven services and technology solutions tailored to the evolving needs of modern industries.</p>
+            <p>We combine precision, innovation, and reliability to help businesses achieve operational excellence and sustainable growth through customer-centric execution and strong technical standards.</p>
+            <p>Our team works closely with clients across multiple industries to provide dependable support, efficient execution, and scalable manufacturing capabilities.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Mission & Vision -->
+    <section class="about-mv-section">
+      <div class="about-shell">
+        <div class="about-mv-header">
+          <h2>What Drives <span>Us</span></h2>
+          <p>Our purpose and direction in shaping the future of engineering</p>
+        </div>
+        <div class="about-mv-grid">
+          <article class="about-mv-card">
+            <div class="mv-icon">
+              <svg width="26" height="26" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="13" cy="13" r="11"/><path d="m9 13 3 3 5-5"/></svg>
+            </div>
+            <h3>Our Mission</h3>
+            <p>To provide reliable and high-quality engineering solutions through innovation, precision, and customer-focused service — enabling our clients to achieve sustainable growth and operational excellence.</p>
+          </article>
+          <article class="about-mv-card">
+            <div class="mv-icon">
+              <svg width="26" height="26" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M2 12s3-7 11-7 11 7 11 7-3 7-11 7S2 12 2 12Z"/><circle cx="13" cy="12" r="3"/></svg>
+            </div>
+            <h3>Our Vision</h3>
+            <p>To become a leading global engineering and manufacturing solutions company known for excellence, trust, and technological advancement — setting new benchmarks in industrial innovation.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <footer class="footer">
+    <div class="page-shell">
+      <div class="footer-inner">
+        <section class="footer-brand">
+          <a class="brand" href="index.html" aria-label="Matkotech home">
+            <img src="matkotech-logo.png" alt="Matkotech logo">
+          </a>
+          <div class="address-row footer-copy">
+            <svg class="location-icon" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+              <path d="M12 21s6-4.35 6-10a6 6 0 1 0-12 0c0 5.65 6 10 6 10Z" stroke="currentColor" stroke-width="1.9" />
+              <circle cx="12" cy="11" r="2.5" stroke="currentColor" stroke-width="1.9" />
+            </svg>
+            <div>
+              <span class="footer-strong">Matkotech</span>
+              1307-13th Flr, AWS-2, Opp Vasundhara Society, Gulbai Tekra, Ambavadi,<br>
+              Ahmedabad - 380006
+            </div>
+          </div>
+        </section>
+        <section class="footer-links">
+          <h3 class="footer-group-title">Explore</h3>
+          <nav aria-label="Footer navigation">
+            <a href="index.html">Home</a>
+            <a href="about.html">About Us</a>
+            <a href="products-services.html">Products &amp; Services</a>
+            <a href="contact.html">Contact Us</a>
+          </nav>
+        </section>
+        <section class="footer-contact">
+          <h3 class="footer-group-title">Get In Touch</h3>
+          <div class="contact-row">
+            <svg class="contact-icon" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+              <path d="M7.8 4.6c.4-.9 1.5-1.3 2.4-.9l1.9.9c.8.4 1.2 1.3 1 2.2l-.6 2.3a2 2 0 0 0 .5 1.8l1.2 1.2a2 2 0 0 0 1.8.5l2.3-.6c.9-.2 1.8.2 2.2 1l.9 1.9c.4.9 0 2-.9 2.4l-1.5.7c-1.7.8-3.6.9-5.4.3a17.1 17.1 0 0 1-9.9-9.9A6.7 6.7 0 0 1 3 5.4l.7-1.5Z" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round" />
+            </svg>
+            <div><span class="footer-strong">Phone</span><a href="tel:+919725695656">+91 9725695656</a></div>
+          </div>
+          <div class="contact-row">
+            <svg class="contact-icon" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+              <path d="M4 7.5A2.5 2.5 0 0 1 6.5 5h11A2.5 2.5 0 0 1 20 7.5v9a2.5 2.5 0 0 1-2.5 2.5h-11A2.5 2.5 0 0 1 4 16.5v-9Z" stroke="currentColor" stroke-width="1.8" />
+              <path d="m5 7 7 6 7-6" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" />
+            </svg>
+            <div><span class="footer-strong">Email</span><a href="mailto:sales@matkotech.com">sales@matkotech.com</a></div>
+          </div>
+        </section>
+      </div>
+      <div class="footer-bottom">
+        <a href="#">Privacy Policy</a>
+        <div>&copy; 2026 Designed By <a class="accent-link" href="index.html">Matkotech Distributors Pvt Ltd</a></div>
+      </div>
+    </div>
+  </footer>
+
+  <script src="app.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Matkotech | Products & Services</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <header class="main-header" style="position:relative;">
+    <div class="header-logo">
+      <a class="brand" href="index.html"><img src="matkotech-logo.png" alt="Matkotech logo"></a>
+    </div>
+    <nav class="nav-menu">
+      <a class="nav-pill" href="index.html">Home</a>
+      <a class="nav-pill" href="about.html">About Us</a>
+
+      <div class="dropdown">
+        <button class="nav-pill dropdown-toggle" id="servicesDropdown" aria-haspopup="true" aria-expanded="false">Products & Services
+          <svg width="10" height="6" viewBox="0 0 10 6" fill="none" style="margin-left:4px;">
+            <path d="M1 1L5 5L9 1" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" />
+          </svg>
+        </button>
+        <div class="dropdown-menu" id="servicesDropdownMenu" role="menu" aria-labelledby="servicesDropdown">
+          <!-- populated by services.js -->
+        </div>
+      </div>
+
+      <a class="nav-pill" href="contact.html">Contact Us</a>
+    </nav>
+  </header>
+
+  <main style="padding: 4rem 4%;">
+    <section class="capabilities-wrap">
+      <div class="capabilities-panel">
+        <h1 class="capabilities-heading">Products & Services</h1>
+        <p class="capabilities-subtitle">Explore Matkotech's core capabilities. Click a card to view details.</p>
+        <div id="capabilitiesGrid" class="capabilities-track" style="margin-top:48px; display:grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap:24px;">
+          <!-- populated by services.js -->
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <script src="services.js"></script>
+</body>
+</html>
