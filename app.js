@@ -310,3 +310,17 @@ if (serviceSearch && serviceCards.length && serviceCount) {
     killTranslateBanner();
   });
 })();
+
+// --- Anti-Copy / Anti-Clone Protection ---
+document.addEventListener('contextmenu', event => event.preventDefault());
+document.addEventListener('keydown', event => {
+  if (
+    event.keyCode === 123 || 
+    (event.ctrlKey && event.shiftKey && (event.keyCode === 73 || event.keyCode === 74 || event.keyCode === 67)) ||
+    (event.ctrlKey && (event.keyCode === 85 || event.keyCode === 83))
+  ) {
+    event.preventDefault();
+    return false;
+  }
+});
+
