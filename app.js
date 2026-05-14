@@ -1,4 +1,4 @@
-window.requestAnimationFrame(() => {
+﻿window.requestAnimationFrame(() => {
   document.body.classList.add("is-loaded");
 });
 
@@ -23,7 +23,7 @@ document.querySelectorAll(".detail-hero").forEach((hero) => {
       "afterbegin",
       `
         <a class="detail-back-link" href="products-services.html" aria-label="Back to Services">
-          <span class="back-arrow" aria-hidden="true">←</span>
+          <span class="back-arrow" aria-hidden="true">â†</span>
           <span>Back to Services</span>
         </a>
       `

@@ -1,4 +1,4 @@
-// Shared services list used to populate header dropdown and homepage capabilities
+﻿// Shared services list used to populate header dropdown and homepage capabilities
 const MATKO_SERVICES = [
   { title: 'Electrical Design', link: 'electrical-design.html', className: 'cap-elec' },
   { title: 'Mechanical Design', link: 'mechanical-design.html', className: 'cap-mech' },

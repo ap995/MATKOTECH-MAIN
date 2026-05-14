@@ -1,4 +1,4 @@
-(() => {
+﻿(() => {
   "use strict";
 
   const ROOT_CLASS = "mtk-layout-safety-ready";

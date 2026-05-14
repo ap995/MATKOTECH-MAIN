@@ -1,4 +1,4 @@
-:root {
+﻿:root {
   --bg: #f5f6f9;
   --surface: #ffffff;
   --text: #122033;
@@ -2243,3 +2243,67 @@ body.is-loaded .plain-header {
     transform: none;
   }
 }
+
+/* --- Shared Capability Cards Styles for Products & Services Page --- */
+.capability-card {
+  position: relative;
+  overflow: hidden;
+  border-radius: 12px;
+  min-height: 240px;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  align-items: center;
+  text-align: center;
+  padding: 1.5rem;
+  background: #000;
+  border: none;
+  transition: transform 0.5s cubic-bezier(0.165, 0.84, 0.44, 1);
+  cursor: pointer;
+  /* GPU Acceleration & rendering fixes */
+  transform: translate3d(0, 0, 0);
+  backface-visibility: hidden;
+  -webkit-font-smoothing: antialiased;
+}
+
+.capability-card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-size: cover;
+  background-position: center;
+  opacity: 0.75;
+  transition: transform 0.6s ease, opacity 0.4s ease;
+  z-index: 0;
+}
+
+.capability-card:hover {
+  transform: translateY(-8px);
+}
+
+.capability-card:hover::before {
+  transform: scale(1.12);
+  opacity: 0.92;
+}
+
+.capability-title {
+  position: relative;
+  z-index: 1;
+  color: #ffffff;
+  font-size: 1.2rem;
+  font-weight: 600;
+  margin: 0;
+  letter-spacing: 0.3px;
+}
+
+.cap-elec::before { background-image: url('images/electrical-design.jpg'); }
+.cap-mech::before { background-image: url('images/mechanical-design.png'); }
+.cap-firm::before { background-image: url('images/firmware-design.jpg'); }
+.cap-scm::before { background-image: url('images/supply-chain-management.avif'); }
+.cap-prog::before { background-image: url('images/program-management.avif'); }
+.cap-app::before { background-image: url('images/software-development.avif'); }
+.cap-ai::before { background-image: url('images/ai-solutions.png'); }
+.cap-ind::before { background-image: url('images/industrial-design.avif'); }
